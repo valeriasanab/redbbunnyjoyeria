@@ -1,0 +1,233 @@
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #0d0d0d;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: black;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav .active {
+  color: #e6c200;
+}
+
+/* HERO */
+.hero-colecciones {
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1602751584552-8ba73aad10e1");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+}
+
+.hero-text p {
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* CATÁLOGO */
+.catalogo {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.catalogo h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.card-producto {
+  background: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.card-producto:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(230, 194, 0, 0.3);
+}
+
+.card-producto img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 20px;
+}
+
+.material {
+  color: #e6c200;
+  font-size: 14px;
+}
+
+.peso {
+  color: #aaa;
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.precio {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0 15px;
+}
+
+/* BOTÓN */
+.btn-comprar {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #e6c200;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn-comprar:hover {
+  background: white;
+}
+
+/* SECCIÓN LUJO */
+.lujo {
+  background: #111;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.lujo-text h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.lujo-text p {
+  color: #bbb;
+}
+
+/* FOOTER */
+footer {
+  background: black;
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+  color: #777;
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    padding: 15px 5%;
+  }
+
+  .navbar nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar nav a {
+    margin: 5px 10px;
+    font-size: 13px;
+  }
+  .hero {
+    height: auto;
+    padding: 140px 20px 80px;
+    background-position: center;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-text button {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+  .productos {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+  .lujo {
+    padding: 70px 20px;
+  }
+
+  .lujo h2 {
+    font-size: 28px;
+  }
+
+  .lujo p {
+    font-size: 15px;
+  }
+  .destacados {
+    padding: 80px 5%;
+  }
+
+  .destacados h2 {
+    font-size: 26px;
+  }
+
+}

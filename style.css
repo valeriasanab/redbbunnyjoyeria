@@ -1,0 +1,228 @@
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0b0b0b;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  background: black;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #d4af37;
+  letter-spacing: 2px;
+}
+
+.navbar nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #d4af37;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url("imagenes/redbunnyportadahoy.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.hero-text button {
+  padding: 12px 30px;
+  border: none;
+  background: #d4af37;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-text button:hover {
+  background: white;
+}
+
+/* DESTACADOS */
+.destacados {
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.destacados h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #d4af37;
+}
+
+.productos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.card h3 {
+  margin-bottom: 5px;
+}
+
+.card p {
+  color: #d4af37;
+}
+
+/* LUJO SECTION */
+.lujo {
+  background: linear-gradient(to right, #000, #111);
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.lujo h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.lujo p {
+  max-width: 600px;
+  margin: auto;
+  color: #ccc;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: black;
+  color: #777;
+  font-size: 14px;
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    padding: 15px 5%;
+  }
+
+  .navbar nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar nav a {
+    margin: 5px 10px;
+    font-size: 13px;
+  }
+  .hero {
+    height: auto;
+    padding: 140px 20px 80px;
+    background-position: center;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-text button {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+  .productos {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+  .lujo {
+    padding: 70px 20px;
+  }
+
+  .lujo h2 {
+    font-size: 28px;
+  }
+
+  .lujo p {
+    font-size: 15px;
+  }
+  .destacados {
+    padding: 80px 5%;
+  }
+
+  .destacados h2 {
+    font-size: 26px;
+  }
+
+}

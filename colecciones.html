@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colecciones | Redbunny Joyería</title>
+  <link rel="stylesheet" href="style4.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<script>
+async function pagarWompi(nombreProducto, precio) {
+
+  const referencia = nombreProducto.replace(/\s+/g, "-").toLowerCase();
+  const monto = precio * 100;
+  const moneda = "COP";
+
+  const res = await fetch("http://localhost:3000/generar-firma", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ referencia, monto, moneda }),
+  });
+
+  const data = await res.json();
+
+  const widget = document.createElement("script");
+  widget.src = "https://checkout.wompi.co/widget.js";
+  widget.setAttribute("data-render", "button");
+  widget.setAttribute("data-public-key", "TU_LLAVE_PUBLICA");
+  widget.setAttribute("data-currency", moneda);
+  widget.setAttribute("data-amount-in-cents", monto);
+  widget.setAttribute("data-reference", referencia);
+  widget.setAttribute("data-signature:integrity", data.firma);
+  widget.setAttribute("data-redirect-url", "http://localhost:3000/gracias.html");
+
+  document.body.appendChild(widget);
+}
+</script>
+
+
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">REDBUNNY</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="colecciones.html">Colecciones</a>
+      <a href="anillos.html">Anillos</a>
+      <a href="cadenas.html">Cadenas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-colecciones">
+    <div class="hero-text">
+      <h1>Colecciones Exclusivas</h1>
+      <p>Diseño, poder y elegancia en cada pieza</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS -->
+  <section class="catalogo">
+    <h2>Piezas Destacadas</h2>
+    <div class="productos">
+
+      <div class="card-producto">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e" alt="Anillo Imperial">
+        <div class="info">
+          <h3>Anillo Imperial</h3>
+          <p class="material">Oro 18K</p>
+          <p class="peso">Peso: 5.2 gramos</p>
+          <p class="precio">$1.250.000 COP</p>
+          <a href="#" class="btn-comprar" onclick="pagarWompi('Anillo Imperial', 1250000); return false;">Comprar ahora</a>
+        </div>
+      </div>
+
+      <div class="card-producto">
+        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638" alt="Cadena Monaco">
+        <div class="info">
+          <h3>Cadena Monaco</h3>
+          <p class="material">Oro 18K</p>
+          <p class="peso">Peso: 12.5 gramos</p>
+          <p class="precio">$2.450.000 COP</p>
+          <a href="#" class="btn-comprar" onclick="pagarWompi('Anillo Imperial', 1250000); return false;">Comprar ahora</a>
+        </div>
+      </div>
+
+      <div class="card-producto">
+        <img src="https://images.unsplash.com/photo-1588444650733-dbbf21dbe9b9" alt="Anillo Élite">
+        <div class="info">
+          <h3>Anillo Élite</h3>
+          <p class="material">Oro 18K</p>
+          <p class="peso">Peso: 3.9 gramos</p>
+          <p class="precio">$990.000 COP</p>
+          <a href="#" class="btn-comprar" onclick="pagarWompi('Anillo Imperial', 1250000); return false;">Comprar ahora</a>
+        </div>
+      </div>
+
+      <div class="card-producto">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338" alt="Cadena Prestige">
+        <div class="info">
+          <h3>Cadena Prestige</h3>
+          <p class="material">Oro 18K</p>
+          <p class="peso">Peso: 15.4 gramos</p>
+          <p class="precio">$2.890.000 COP</p>
+          <a href="#" class="btn-comprar" onclick="pagarWompi('Anillo Imperial', 1250000); return false;">Comprar ahora</a>
+        </div>
+      </div> 
+
+    </div>
+  </section>
+
+  <!-- MENSAJE MARCA -->
+  <section class="lujo">
+    <div class="lujo-text">
+      <h2>Más que joyas, símbolos</h2>
+      <p>Cada colección representa éxito, amor y estatus.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Redbunny Joyería — Oro 18K</p>
+  </footer>
+
+</body>
+</html>

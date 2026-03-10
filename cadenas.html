@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadenas | Redbunny Joyería</title>
+  <link rel="stylesheet" href="style3.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<script src="https://checkout.wompi.co/widget.js"></script>
+
+<script>
+function pagarWompi(nombreProducto, precio) {
+  const checkout = new WidgetCheckout({
+    currency: 'COP',
+    amountInCents: precio * 100,
+    reference: nombreProducto + '-' + Date.now(),
+    publicKey: 'TU_CLAVE_PUBLICA_AQUI',
+    redirectUrl: 'https://tusitio.com/exito.html',
+    customerData: {
+      email: 'cliente@email.com'
+    }
+  });
+
+  checkout.open(function (result) {
+    if (result.transaction.status === 'APPROVED') {
+      window.location.href = "exito.html";
+    }
+  });
+}
+</script>
+
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">REDBUNNY</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="colecciones.html">Colecciones</a>
+      <a href="anillos.html">Anillos</a>
+      <a href="cadenas.html">Cadenas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-cadenas">
+    <div class="hero-text">
+      <h1>Cadenas en Oro 18K</h1>
+      <p>Elegancia que se lleva puesta</p>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section class="catalogo">
+    <h2>Nuestras Cadenas</h2>
+    <div class="productos">
+
+      <div class="card-producto">
+        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638" alt="Cadena Monaco">
+        <div class="info">
+          <h3>Cadena Monaco</h3>
+          <p class="material">Oro 18K</p>
+          <p class="peso">Peso: 12.5 gramos</p>
+          <p class="precio">$2.450.000 COP</p>
+          <a href="contacto.html?producto=Anillo Imperial"class="btn-comprar" onclick="pagarWompi('Anillo Imperial', 1250000)">Comprar ahora</a>
+        </div>
+      </div>
+
+      <div class="card-producto">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f" alt="Cadena Cubana">
+        <div class="info">
+          <h3>Cadena Cubana</h3>
+          <p class="material">Oro 18K</p>
+          <p class="peso">Peso: 18.2 gramos</p>
+          <p class="precio">$3.100.000 COP</p>
+          <a href="contacto.html?producto=Anillo Imperial"class="btn-comprar" onclick="pagarWompi('Anillo Imperial', 1250000)">Comprar ahora</a>
+        </div>
+      </div>
+
+      <div class="card-producto">
+        <img src="https://images.unsplash.com/photo-1588444650733-dbbf21dbe9b9" alt="Cadena Fina">
+        <div class="info">
+          <h3>Cadena Fina Clásica</h3>
+          <p class="material">Oro 18K</p>
+          <p class="peso">Peso: 6.9 gramos</p>
+          <p class="precio">$1.380.000 COP</p>
+          <a href="contacto.html?producto=Anillo Imperial"class="btn-comprar" onclick="pagarWompi('Anillo Imperial', 1250000)">Comprar ahora</a>
+        </div>
+      </div>
+
+      <div class="card-producto">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338" alt="Cadena Lujo">
+        <div class="info">
+          <h3>Cadena Prestige</h3>
+          <p class="material">Oro 18K</p>
+          <p class="peso">Peso: 15.4 gramos</p>
+          <p class="precio">$2.890.000 COP</p>
+          <a href="contacto.html?producto=Anillo Imperial"class="btn-comprar" onclick="pagarWompi('Anillo Imperial', 1250000)">Comprar ahora</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN MARCA -->
+  <section class="lujo">
+    <div class="lujo-text">
+      <h2>El lujo está en la presencia</h2>
+      <p>Cadenas que hablan de poder, estilo y distinción.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Redbunny Joyería — Oro 18K</p>
+  </footer>
+
+</body>
+</html>

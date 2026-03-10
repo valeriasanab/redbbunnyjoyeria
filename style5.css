@@ -1,0 +1,180 @@
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: black;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+}
+
+.navbar nav .active,
+.navbar nav a:hover {
+  color: #e6c200;
+}
+
+/* HERO */
+.hero-contacto {
+  height: 40vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* BOTONES REDES */
+.redes {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn-red {
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.whatsapp { background: #25D366; color: white; }
+.instagram { background: #E1306C; color: white; }
+
+/* FORMULARIO */
+.contacto-contenedor {
+  display: flex;
+  justify-content: center;
+  padding: 50px 10%;
+}
+
+.formulario {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+}
+
+.formulario button {
+  margin-top: 15px;
+  padding: 12px;
+  background: #e6c200;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* PAGOS */
+.pagos {
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.iconos-pago span {
+  display: inline-block;
+  margin: 10px 15px;
+  font-size: 18px;
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    padding: 15px 5%;
+  }
+
+  .navbar nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar nav a {
+    margin: 5px 10px;
+    font-size: 13px;
+  }
+  .hero {
+    height: auto;
+    padding: 140px 20px 80px;
+    background-position: center;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-text button {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+  .productos {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+  .lujo {
+    padding: 70px 20px;
+  }
+
+  .lujo h2 {
+    font-size: 28px;
+  }
+
+  .lujo p {
+    font-size: 15px;
+  }
+  .destacados {
+    padding: 80px 5%;
+  }
+
+  .destacados h2 {
+    font-size: 26px;
+  }
+
+}
